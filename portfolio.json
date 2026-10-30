@@ -1,0 +1,11 @@
+{
+  "owner": "선우은희",
+  "headline": "AI와 함께 만든 데이터 도구",
+  "intro": "매주 하나씩 만들어 올립니다. 도구마다 제가 내린 판단이 하나씩 들어 있습니다.",
+  "cards": [
+    {"week": 1, "title": "감 테스트", "line": "데이터 기반 만들어진 퀴즈",
+     "judgment": "다들 \"한 시간은 걸린다\"고 하는데, 실제 평균은 다를 것 같다. 그래서 출근길에 떠올리는 숫자를 감으로 먼저 맞히고, 공개 데이터로 계산한 정답과 근거를 바로 확인하는 퀴즈로 정했다.",
+     "ai": ["Claude Code", "v0", "Perplexity"], "url": "https://gam-test-eunhee5.vercel.app/", "img": "img/w1.jpg"}
+  ],
+  "proposal": null
+}
