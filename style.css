@@ -1,39 +1,63 @@
+/* 짙은 잔디 위에 흰 카드, 포인트는 맨유 빨강. 머리글 아래에 하프라인과 센터서클 반원 */
 :root {
-  --bg: #f6f7f9; --panel: #fff; --ink: #14171c; --body: #3a404b; --dim: #7c838f; --line: #e3e6eb;
-  --accent: #4f46e5; --accent-soft: #eef0ff; --warn: #b26a00; --warn-soft: #fdf3e3;
+  --grass1: #10442a; --grass2: #134b2e; --chalk: rgba(255,255,255,.55);
+  --panel: #fff; --ink: #16181d; --body: #3a404b; --dim: #7c838f; --line: #ececec;
+  --accent: #DA291C; --accent-soft: #fdf0ef;
+  /* 흑백 축구공 */
+  --ball: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3CclipPath id='c'%3E%3Ccircle cx='50' cy='50' r='46'/%3E%3C/clipPath%3E%3Ccircle cx='50' cy='50' r='46' fill='white'/%3E%3Cg clip-path='url(%23c)' fill='%23111'%3E%3Ccircle cx='50' cy='3' r='14'/%3E%3Ccircle cx='95' cy='36' r='14'/%3E%3Ccircle cx='78' cy='89' r='14'/%3E%3Ccircle cx='22' cy='89' r='14'/%3E%3Ccircle cx='5' cy='36' r='14'/%3E%3C/g%3E%3Cpolygon points='50,33 66,45 60,64 40,64 34,45' fill='%23111'/%3E%3Cg stroke='%23111' stroke-width='3'%3E%3Cline x1='50' y1='33' x2='50' y2='16'/%3E%3Cline x1='66' y1='45' x2='82' y2='39'/%3E%3Cline x1='60' y1='64' x2='70' y2='77'/%3E%3Cline x1='40' y1='64' x2='30' y2='77'/%3E%3Cline x1='34' y1='45' x2='18' y2='39'/%3E%3C/g%3E%3Ccircle cx='50' cy='50' r='46' fill='none' stroke='%23111' stroke-width='4'/%3E%3C/svg%3E");
 }
 * { box-sizing: border-box; }
-body { margin: 0; background: var(--bg); color: var(--body); line-height: 1.6;
-  font-family: Pretendard, "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0; color: var(--body); line-height: 1.6; min-height: 100vh;
+  background-color: var(--grass1);
+  background-image:
+    radial-gradient(90% 55% at 50% 0%, rgba(255,255,255,.10), transparent 70%),
+    linear-gradient(180deg, transparent 55%, rgba(0,0,0,.25)),
+    repeating-linear-gradient(180deg, var(--grass1) 0 90px, var(--grass2) 90px 180px);
+  font-family: "Pretendard Variable", Pretendard, "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased; }
 #app { max-width: 980px; margin: 0 auto; padding: 28px 16px 56px; }
-.hero { padding: 8px 0 22px; }
-.badge { display: inline-block; font-size: 12px; font-weight: 800; color: var(--accent); background: var(--accent-soft);
-  padding: 4px 10px; border-radius: 999px; }
-h1 { font-size: 30px; color: var(--ink); letter-spacing: -.8px; line-height: 1.25; margin: 10px 0 8px; }
+
+/* 머리글 — 아래 테두리가 하프라인, 가운데 반원이 센터서클 */
+.hero { padding: 8px 0 44px; margin-bottom: 30px; position: relative; border-bottom: 3px solid var(--chalk); }
+.hero::after { content: ""; position: absolute; left: 50%; bottom: -3px; width: 120px; height: 60px;
+  transform: translateX(-50%); border: 3px solid var(--chalk); border-bottom: 0; border-radius: 60px 60px 0 0; }
+.badge { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 700; color: #fff;
+  background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.22); padding: 4px 11px 4px 5px; border-radius: 999px; }
+.badge::before { content: ""; width: 16px; height: 16px; background: var(--ball) center / contain no-repeat; }
+h1 { font-size: 32px; font-weight: 800; color: #fff; letter-spacing: -1px; line-height: 1.25; margin: 14px 0 8px; }
+.hero .muted { color: rgba(255,255,255,.72); }
 .muted { color: var(--dim); }
-.jump { display: flex; gap: 14px; margin-top: 12px; font-size: 14px; font-weight: 700; }
-.jump a { color: var(--accent); text-decoration: none; }
-.cards { display: grid; grid-template-columns: 1fr; gap: 14px; }
+.jump { display: flex; gap: 16px; margin-top: 14px; font-size: 14px; font-weight: 700; }
+.jump a { color: #fff; text-decoration: none; border-bottom: 2px solid var(--accent); padding-bottom: 1px; }
+
+/* 카드 — 흰 바탕에 얇은 빨간 테두리 */
+.cards { display: grid; grid-template-columns: 1fr; gap: 16px; }
 @media (min-width: 720px) { .cards { grid-template-columns: 1fr 1fr; } }
-.card { display: grid; grid-template-columns: 116px 1fr; gap: 14px; background: var(--panel); border: 1px solid var(--line);
-  border-radius: 14px; padding: 12px; box-shadow: 0 1px 2px rgba(20,23,28,.04); }
+.card { display: grid; grid-template-columns: 116px 1fr; gap: 14px; background: var(--panel);
+  border: 1.5px solid var(--accent); border-radius: 16px; padding: 12px; box-shadow: 0 10px 24px rgba(0,0,0,.28); }
 .card img, .noimg { width: 116px; height: 145px; object-fit: cover; object-position: top; border-radius: 10px;
-  border: 1px solid var(--line); background: #eef0f3; }
+  border: 1px solid var(--line); background: #eef3ef; }
 .noimg { display: flex; align-items: center; justify-content: center; font-weight: 800; color: var(--dim); }
-.card.empty { opacity: .6; border-style: dashed; }
+/* 아직 비어 있는 주 — 잔디 위에 흰 점선만 */
+.card.empty { background: rgba(255,255,255,.06); border: 1.5px dashed rgba(255,255,255,.35); box-shadow: none; }
+.card.empty .noimg { background: transparent; border-color: rgba(255,255,255,.25); color: rgba(255,255,255,.6); }
+.card.empty h3 { color: #fff; }
+.card.empty .line { color: rgba(255,255,255,.6); }
 .wk { font-size: 11px; font-weight: 800; color: var(--accent); letter-spacing: .06em; }
-.card h3 { margin: 2px 0 4px; font-size: 17px; color: var(--ink); }
+.card h3 { margin: 2px 0 4px; font-size: 17px; font-weight: 800; color: var(--ink); letter-spacing: -.4px; }
 .line { margin: 0 0 8px; font-size: 13.5px; }
-.judge { font-size: 13px; background: var(--warn-soft); color: #6b4a10; border-radius: 8px; padding: 7px 9px; }
-.judge b { display: block; font-size: 11px; color: var(--warn); margin-bottom: 2px; }
+.judge { font-size: 13px; background: var(--accent-soft); color: #5a1d17; border-radius: 8px; padding: 8px 10px; }
+.judge b { display: block; font-size: 11px; color: var(--accent); margin-bottom: 2px; }
 .ai { display: flex; flex-wrap: wrap; gap: 4px; margin: 8px 0; }
 .ai span { font-size: 11px; font-weight: 700; padding: 2px 7px; border-radius: 6px; background: #f1f2f4; color: var(--body); }
 .go { font-size: 13px; font-weight: 800; color: var(--accent); text-decoration: none; }
 .go.off { color: var(--dim); font-weight: 600; }
-.proposal { margin-top: 26px; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 20px 18px; }
+
+.proposal { margin-top: 26px; background: var(--panel); border: 1.5px solid var(--accent); border-radius: 16px;
+  padding: 20px 18px; box-shadow: 0 10px 24px rgba(0,0,0,.28); }
 .proposal .label { font-size: 12px; font-weight: 800; color: var(--accent); letter-spacing: .06em; }
 .proposal h2 { font-size: 22px; color: var(--ink); margin: 6px 0 8px; letter-spacing: -.4px; }
 .proposal .ask { font-size: 16px; font-weight: 800; color: var(--ink); background: var(--accent-soft); border-radius: 10px; padding: 10px 12px; }
 .proposal h3 { font-size: 14px; color: var(--ink); margin: 16px 0 6px; }
 .proposal ul { padding-left: 18px; margin: 0; font-size: 14px; }
-.fineprint { margin-top: 20px; font-size: 12px; color: var(--dim); text-align: center; }
+.fineprint { margin-top: 24px; font-size: 12px; color: rgba(255,255,255,.6); text-align: center; }
