@@ -5,7 +5,10 @@
   "cards": [
     {"week": 1, "title": "축구, 얼마나 좋아하니?", "line": "공개 축구 기록으로 계산한 감 테스트",
      "judgment": "문항마다 근거를 찾아다닐 수는 없어서, 내가 고른 공개 데이터에서 계산으로 답이 나오는 문항만 남겼다. 정답이 흔들리지 않게 기간, 승부차기 처리, 예선 포함 여부를 하나씩 정해서 문항에 적었다. 공개 사이트에서 남의 저작물을 쓰지 않기 위해서 로고나 유니폼 사용은 지양했다.",
-     "ai": ["Claude Code", "v0", "Perplexity"], "url": "https://soccer-gam-test-eh.vercel.app/", "img": "img/w1.jpg"}
+     "ai": ["Claude Code", "v0", "Perplexity"], "url": "https://soccer-gam-test-eh.vercel.app/", "img": "img/w1.jpg"},
+    {"week": 2, "title": "고충처리 박스", "line": "직원이 접수한 고충을 처리하는 업무 관리 프로세스",
+     "judgment": "AI 분석을 위한 개인정보 보호와 실제 고충처리에 필요한 정보 보존을 구분하고, 최종 판단과 담당자 배정은 HR이 수행하도록 설계했습니다.",
+     "ai": ["Claude Code", "Gemini", "ChatGPT"], "url": "https://my-classifier-psi.vercel.app", "img": "img/w2.jpg"}
   ],
   "proposal": null
 }
