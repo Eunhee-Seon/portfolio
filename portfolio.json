@@ -40,6 +40,22 @@
       ],
       "url": "https://my-cleaner-bay.vercel.app/",
       "img": "img/w3.jpg"
+    },
+    {
+      "week": 4,
+      "title": "HR 운영 리포트",
+      "line": "인사 데이터를 SQL로 조회하고, 인력·근태·급여의 변화를 HR 검토 항목과 후속 조치 기록으로 연결하는 브라우저 앱",
+      "judgment": "인사 데이터를 단순히 조회하는 것보다 변화가 발생한 지점을 찾아 후속 조치로 연결하는 것이 중요하다고 판단했다. 테이블별 데이터 단위가 달라 중복 집계되지 않도록 설계하고, 초과근로 급증이나 기준 초과 사례는 문제 직원으로 판정하지 않고 HR 검토 대상으로 분류했다.",
+      "ai": [
+        "SQL",
+        "DuckDB",
+        "Gemini API",
+        "Claude Code",
+        "GitHub",
+        "Vercel"
+      ],
+      "url": "https://my-app-eunhee5.vercel.app/",
+      "img": "img/w4.jpg"
     }
   ],
   "proposal": null
