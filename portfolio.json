@@ -56,6 +56,20 @@
       ],
       "url": "https://my-app-eunhee5.vercel.app/",
       "img": "img/w4.jpg"
+    },
+    {
+      "week": 5,
+      "title": "지표 사전",
+      "line": "지표마다 정의서 한 장을 두고, 카드 · 대시보드 · AI가 같은 정의서를 읽어 같은 숫자를 내는 사이트",
+      "judgment": "같은 '활성 고객'도 정의에 따라 2만 9천 명에서 4만 3천 명까지 달라져서, 지표마다 정의서를 만들고 화면과 AI가 그 정의서만 읽게 했다. 활성 기준은 평균이 아니라 해지율이 크게 꺾이는 로그인 8회로 정했고, 버린 기준과 그 이유도 함께 남겼다. 대시보드 위에는 지금 상태로 판단하는 지표를 두고, 한 달 값이 흔들리는 지표는 아래 추이로 내렸다.",
+      "ai": [
+        "Claude Code",
+        "DuckDB",
+        "GitHub",
+        "Vercel"
+      ],
+      "url": "https://metric-dictionary-kappa.vercel.app/",
+      "img": ""
     }
   ],
   "proposal": null
